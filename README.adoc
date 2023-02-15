@@ -1,0 +1,20 @@
+= Vertx-opentelemetry-stdout
+
+image:https://img.shields.io/badge/vert.x-4.3.8-purple.svg[link="https://vertx.io"]
+
+The skeleton of this application was generated using http://start.vertx.io.
+
+It's a simple example project to show how to configure OpenTelemetry for Vertx using an exporter which logs to stdout.
+
+You won't find an explanation of OpenTelemetry here, this will only help you if you want to get the smallest possible example project on how to use it in Vertx.
+
+These are the required steps in a nutshell:
+
+. Add the required dependencies (remember to add the BOM, too!)
+. Configure OpenTelemetry (see `Main.java#configureOpenTracing`)
+. Remember to enable tracing in all Vertx components you use (SQL client, eventbus, http server, ...)
+. If you use some slf4j logging library, add `jul-to-slf4j` to your dependencies and configure it, because `LoggingSpanExporter` uses `java.util.Logger`, so you have to redirect logging to your used logging library
+
+== Links
+- https://opentelemetry.io/docs/instrumentation/java/manual/
+- https://vertx.io/docs/vertx-opentelemetry/java/
